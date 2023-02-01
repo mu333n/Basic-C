@@ -1,0 +1,53 @@
+#include<stdio.h>
+int main()
+{
+    int day,month,year;
+    char ch1,ch2;
+    scanf("%d%c%d%c%d",&day,&ch1,&month,&ch2,&year);
+    if(day<=10&&month>10){
+    printf("%d%c0%d%c%d\n",month,ch1,day,ch2,year);
+    printf("%d%c%d%c0%d\n",year,ch1,month,ch2,day);
+    printf("0%d-%d-%d\n",day,ch1,month,ch2,year);
+    }
+    if(month<=10&&day>10){
+    printf("0%d%c%d%c%d\n",month,ch1,day,ch2,year);
+    printf("%d%c0%d%c%d\n",year,ch1,month,ch2,day);
+    printf("%d-0%d-%d\n",day,ch1,month,ch2,year);
+    }
+    if(year<=10){
+    printf("%d%c%d%c000%d\n",month,ch1,day,ch2,year);
+    printf("000%d%c%d%c%d\n",year,ch1,month,ch2,day);
+    printf("%d-%d-000%d\n",day,ch1,month,ch2,year);
+    }
+    if(year<=100&&year>10){
+    printf("%d%c%d%c00%d\n",month,ch1,day,ch2,year);
+    printf("00%d%c%d%c%d\n",year,ch1,month,ch2,day);
+    printf("%d-%d-00%d\n",day,ch1,month,ch2,year);
+    }
+    if(year<=1000&&year>10&&year>100){
+    printf("%d%c0%d%c0%d\n",month,ch1,day,ch2,year);
+    printf("0%d%c%d%c%d\n",year,ch1,month,ch2,day);
+    printf("%d-%d-0%d\n",day,ch1,month,ch2,year);
+    }
+    if(month<=10&&day<10){
+    printf("0%d%c0%d%c%d\n",month,ch1,day,ch2,year);
+    printf("%d%c0%d%c%0d\n",year,ch1,month,ch2,day);
+    printf("0%d-0%d-%d\n",day,ch1,month,ch2,year);
+    }
+    if(month<=10&&day<10&&year<10){
+    printf("0%d%c0%d%c000%d\n",month,ch1,day,ch2,year);
+    printf("%000d%c0%d%c%0d\n",year,ch1,month,ch2,day);
+    printf("0%d-0%d-%000d\n",day,ch1,month,ch2,year);
+    }
+    if(month<=10&&day<10&&year<100&&year>10){
+    printf("0%d%c0%d%c00%d\n",month,ch1,day,ch2,year);
+    printf("%00d%c0%d%c%0d\n",year,ch1,month,ch2,day);
+    printf("0%d-0%d-%00d\n",day,ch1,month,ch2,year);
+    }
+    if(month<=10&&day<10&&year<1000&&year>10&&year>100){
+    printf("0%d%c0%d%c0%d\n",month,ch1,day,ch2,year);
+    printf("%0d%c0%d%c%0d\n",year,ch1,month,ch2,day);
+    printf("0%d-0%d-%0d\n",day,ch1,month,ch2,year);
+    }
+    return 0;
+}
